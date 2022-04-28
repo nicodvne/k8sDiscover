@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: simple-webapp-color-blue
+  labels:
+    app: web
+spec:
+  containers:
+  - name: web #( nom )
+    image: mmumshad/simple-webapp-color #( image docker ) 
+    ports: 
+     - containerPort: 8080 #( port cible sur le réseau interne k8s ( pas exposé ))
+    env: #Variables d'environements
+     - name: APP_COLOR
+       value: blue
